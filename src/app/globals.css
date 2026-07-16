@@ -210,7 +210,7 @@ body {
 /* Countdown digits */
 .countdown-digit {
   font-family: var(--font-cormorant);
-  font-size: clamp(3rem, 8vw, 6rem);
+  font-size: clamp(2rem, 10vw, 6rem);
   font-weight: 300;
   line-height: 1;
   color: #FDFAF5;

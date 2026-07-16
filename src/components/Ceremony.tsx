@@ -63,6 +63,16 @@ export default function Ceremony() {
           {/* Información */}
           <ScrollReveal direction="right" delay={150}>
             <div className="flex flex-col gap-6">
+              {/* Ícono visible solo en mobile */}
+              <div className="flex flex-col items-center gap-3 lg:hidden pb-2">
+                <ChurchIcon />
+                <p className="font-display text-4xl font-light text-warm-deeper">12:00 hs</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-px bg-gold/40" />
+                  <span className="font-display text-sm italic text-gold font-light">10.10.26</span>
+                  <div className="w-8 h-px bg-gold/40" />
+                </div>
+              </div>
               <div className="gold-divider-left" />
               <h2 className="section-title">Ceremonia Religiosa</h2>
 

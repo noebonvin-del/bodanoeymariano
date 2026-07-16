@@ -38,6 +38,31 @@ export default function Party() {
           {/* Información (primero en mobile) */}
           <ScrollReveal direction="left" delay={150}>
             <div className="flex flex-col gap-6">
+              {/* Ícono visible solo en mobile */}
+              <div className="flex flex-col items-center gap-3 lg:hidden pb-2">
+                <svg viewBox="0 0 48 52" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-14 text-gold mx-auto">
+                  <path d="M10 6 L18 28 L15 34" stroke="currentColor" strokeWidth="1" strokeLinecap="round" fill="none" strokeOpacity="0.8" />
+                  <line x1="11" y1="34" x2="19" y2="34" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeOpacity="0.7" />
+                  <path d="M6 6 L22 6 L18 22 L10 22 Z" stroke="currentColor" strokeWidth="0.7" fill="currentColor" fillOpacity="0.08" strokeLinejoin="round" />
+                  <path d="M38 6 L30 28 L33 34" stroke="currentColor" strokeWidth="1" strokeLinecap="round" fill="none" strokeOpacity="0.8" />
+                  <line x1="29" y1="34" x2="37" y2="34" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeOpacity="0.7" />
+                  <path d="M42 6 L26 6 L30 22 L38 22 Z" stroke="currentColor" strokeWidth="0.7" fill="currentColor" fillOpacity="0.08" strokeLinejoin="round" />
+                  <line x1="18" y1="14" x2="30" y2="14" stroke="currentColor" strokeWidth="0.5" strokeOpacity="0.3" strokeDasharray="2 2" />
+                  <circle cx="14" cy="14" r="0.8" fill="currentColor" fillOpacity="0.5" />
+                  <circle cx="12" cy="10" r="0.6" fill="currentColor" fillOpacity="0.4" />
+                  <circle cx="34" cy="14" r="0.8" fill="currentColor" fillOpacity="0.5" />
+                  <circle cx="36" cy="10" r="0.6" fill="currentColor" fillOpacity="0.4" />
+                  <line x1="24" y1="2" x2="24" y2="6" stroke="currentColor" strokeWidth="0.7" strokeOpacity="0.5" strokeLinecap="round" />
+                  <line x1="21" y1="3" x2="24" y2="6" stroke="currentColor" strokeWidth="0.7" strokeOpacity="0.4" strokeLinecap="round" />
+                  <line x1="27" y1="3" x2="24" y2="6" stroke="currentColor" strokeWidth="0.7" strokeOpacity="0.4" strokeLinecap="round" />
+                </svg>
+                <p className="font-display text-2xl font-light text-warm-deeper italic">¡A celebrar!</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-px bg-gold/40" />
+                  <span className="font-display text-sm italic text-gold font-light">Villa Carlos Paz</span>
+                  <div className="w-8 h-px bg-gold/40" />
+                </div>
+              </div>
               <div className="gold-divider-left" />
               <h2 className="section-title">Fiesta</h2>
 
