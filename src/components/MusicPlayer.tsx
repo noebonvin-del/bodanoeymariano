@@ -74,8 +74,8 @@ export default function MusicPlayer() {
         title={playing ? "Pausar música" : "Reproducir música"}
         style={{
           position: "fixed",
-          bottom: "88px",
-          right: "20px",
+          bottom: "24px",
+          left: "24px",
           zIndex: 50,
           width: "48px",
           height: "48px",
