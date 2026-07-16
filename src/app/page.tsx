@@ -10,12 +10,14 @@ import Gifts from "@/components/Gifts";
 import Music from "@/components/Music";
 import Footer from "@/components/Footer";
 import FloralDivider from "@/components/ui/FloralDivider";
-import FloatingActions from "@/components/FloatingActions";
+import FloatingCTA from "@/components/ui/FloatingCTA";
+import MusicPlayer from "@/components/MusicPlayer";
 
 export default function Home() {
   return (
     <main className="overflow-hidden">
-      <FloatingActions />
+      <FloatingCTA />
+      <MusicPlayer />
       <Hero />
       <OurStory />
       <FloralDivider />
