@@ -87,13 +87,40 @@ export default function OurStory() {
           </div>
         </div>
 
-        {/* Grid mobile: 2 columnas */}
-        <div className="md:hidden grid grid-cols-2 gap-3 mb-8">
-          {photos.map((photo) => (
-            <div key={photo.id} style={{ height: "180px", overflow: "hidden" }}>
-              <img src={photo.src} alt={photo.alt} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }} />
-            </div>
-          ))}
+        {/* Grid mobile: misma estructura que desktop */}
+        <div className="md:hidden flex flex-col gap-2 mb-8">
+          {/* Fila 1: 2x2 */}
+          <div className="grid grid-cols-2 gap-2">
+            {[
+              { photo: photos[0], pos: "center center" },
+              { photo: photos[1], pos: "center bottom" },
+              { photo: photos[2], pos: "center center" },
+              { photo: photos[3], pos: "center top" },
+            ].map(({ photo, pos }) => (
+              <div key={photo.id} style={{ height: "160px", overflow: "hidden" }}>
+                <img src={photo.src} alt={photo.alt} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: pos, display: "block" }} />
+              </div>
+            ))}
+          </div>
+
+          {/* Foto central full width */}
+          <div style={{ height: "200px", overflow: "hidden" }}>
+            <img src={photos[4].src} alt={photos[4].alt} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center", display: "block" }} />
+          </div>
+
+          {/* Fila 3: 2x2 */}
+          <div className="grid grid-cols-2 gap-2">
+            {[
+              { photo: photos[5], pos: "center center" },
+              { photo: photos[6], pos: "center center" },
+              { photo: photos[7], pos: "center top" },
+              { photo: photos[8], pos: "center top" },
+            ].map(({ photo, pos }) => (
+              <div key={photo.id} style={{ height: "160px", overflow: "hidden" }}>
+                <img src={photo.src} alt={photo.alt} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: pos, display: "block" }} />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Texto */}
