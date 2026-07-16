@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     locale: "es_AR",
     images: [
       {
-        url: "/images/foto-05.jpg",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Noe & Mariano · 10.10.2026",
