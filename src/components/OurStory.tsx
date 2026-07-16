@@ -97,14 +97,14 @@ export default function OurStory() {
               { photo: photos[2], pos: "center center" },
               { photo: photos[3], pos: "center top" },
             ].map(({ photo, pos }) => (
-              <div key={photo.id} style={{ height: "160px", overflow: "hidden" }}>
+              <div key={photo.id} style={{ height: "200px", overflow: "hidden" }}>
                 <img src={photo.src} alt={photo.alt} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: pos, display: "block" }} />
               </div>
             ))}
           </div>
 
           {/* Foto central full width */}
-          <div style={{ height: "200px", overflow: "hidden" }}>
+          <div style={{ height: "220px", overflow: "hidden" }}>
             <img src={photos[4].src} alt={photos[4].alt} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center", display: "block" }} />
           </div>
 
@@ -113,10 +113,10 @@ export default function OurStory() {
             {[
               { photo: photos[5], pos: "center center" },
               { photo: photos[6], pos: "center center" },
-              { photo: photos[7], pos: "center top" },
-              { photo: photos[8], pos: "center top" },
+              { photo: photos[7], pos: "center center" },
+              { photo: photos[8], pos: "center center" },
             ].map(({ photo, pos }) => (
-              <div key={photo.id} style={{ height: "160px", overflow: "hidden" }}>
+              <div key={photo.id} style={{ height: "200px", overflow: "hidden" }}>
                 <img src={photo.src} alt={photo.alt} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: pos, display: "block" }} />
               </div>
             ))}
