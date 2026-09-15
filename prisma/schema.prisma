@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum PhotoStatus {
+  VISIBLE
+  HIDDEN
+}
+
+model Photo {
+  id           String      @id @default(cuid())
+  url          String
+  publicId     String
+  width        Int?
+  height       Int?
+  guestName    String?
+  status       PhotoStatus @default(VISIBLE)
+  createdAt    DateTime    @default(now())
+
+  @@index([createdAt])
+  @@index([status])
+}
+
+model RevealSettings {
+  id          Int       @id @default(1)
+  scheduledAt DateTime?
+  revealedAt  DateTime?
+  updatedAt   DateTime  @updatedAt
+}
