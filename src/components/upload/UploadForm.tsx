@@ -237,6 +237,9 @@ export default function UploadForm() {
             <button onClick={resetAll} className="btn-outline text-xs">
               Subir más fotos
             </button>
+            <a href="/gallery" className="btn-outline text-xs">
+              Ver fotos
+            </a>
             <a href="/" className="font-sans text-xs text-warm-deeper/40 underline">
               Volver
             </a>
