@@ -13,7 +13,8 @@ export type CloudinaryUploadResult = {
  */
 export function uploadToCloudinary(
   file: File,
-  onProgress?: (percent: number) => void
+  onProgress?: (percent: number) => void,
+  onXhrReady?: (xhr: XMLHttpRequest) => void
 ): Promise<CloudinaryUploadResult> {
   const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
   const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET;
@@ -30,6 +31,7 @@ export function uploadToCloudinary(
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
     xhr.open("POST", `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`);
+    onXhrReady?.(xhr);
 
     xhr.upload.onprogress = (event) => {
       if (event.lengthComputable && onProgress) {
@@ -50,6 +52,10 @@ export function uploadToCloudinary(
     };
 
     xhr.onerror = () => reject(new Error("Network error during upload"));
+    // A guest tapping X mid-upload calls xhr.abort(), which fires this event
+    // instead of onerror/onload — without a handler the promise would hang
+    // forever and processFile() would never clean up the queue item.
+    xhr.onabort = () => reject(new Error("Cancelado"));
     xhr.send(formData);
   });
 }
